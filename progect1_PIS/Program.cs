@@ -11,25 +11,25 @@ namespace progect1_PIS
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            MainString mainstr = new MainString();
+            
+            StringManipulation stringManipulation = new StringManipulation();
 
-            string income1 = "\"Статус работы\" \"Казарез Полина Андреевна\" \"Курсовая работа\" 2023.10.02 \"В процессе\"";
-            string income2 = "\"Тема работы\" \"Спепанова Лидия Ивановна\" \"Практическая работа\" 2024.09.09";
-            string income3 = "\"Работа с наставником\" \"Казарез Полина Андреевна\" \"Курсовая работа\" 2023.10.02 \"Иванов Михаил Ильич\"";
-           
+            string themes1 = "\"Статус работы\" \"Казарез Полина Андреевна\" \"Практическая работа\" 2023.10.02 \"В процессе\"";
+            string themes2 = "\"Тема работы\" \"Спепанова Лидия Ивановна\" \"Практическая работа\" 2024.09.09";
+            string themes3 = "\"Работа с наставником\" \"Казарез Полина Андреевна\" \"Курсовая работа\" 2024.10.02 \"Иванов Михаил Ильич\"";
+            string[] provera = new string[] { themes1, themes2, themes3 };
 
-            Console.WriteLine("Вывод из строк");
-            string[] provera = new string[] { income1, income2, income3};
+            
+            Console.WriteLine("---------------------------------------------Вывод из строк------------------------------------");
             foreach (string linestr in provera)
             {
-                Console.WriteLine(mainstr.ObjectOutput(linestr));
+                Console.WriteLine(stringManipulation.ObjectOutput(linestr));
             }
-
-            Console.WriteLine("\nВывод из файла");
-            foreach (string linefile in mainstr.StrFromFiles("2.txt"))
+            
+            Console.WriteLine("---------------------------------------------Вывод из файла------------------------------------");
+            foreach (string linefile in stringManipulation.StrFromFiles("2.txt"))
             {
-                Console.WriteLine(mainstr.ObjectOutput(linefile));
+                Console.WriteLine(stringManipulation.ObjectOutput(linefile));
             }
             Console.ReadKey();
         }
